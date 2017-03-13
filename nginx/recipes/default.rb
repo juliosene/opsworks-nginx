@@ -16,7 +16,7 @@ apt_package 'php-fpm' do
 end
 service 'php-fpm' do
   supports status: true, restart: true, reload: true
-  action :enable
+  action :nothing
 end
 service 'nginx' do
   supports status: true, restart: true, reload: true
