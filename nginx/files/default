@@ -44,8 +44,7 @@ server {
 	index index.html index.htm index.nginx-debian.html;
 
 	server_name _;
-	gzip_types text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/richtext image/svg+xml text/plain te
-xt/xsd text/xsl text/xml image/x-icon;
+	gzip_types text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon;
         location = /favicon.ico {
                 log_not_found off;
                 access_log off;
