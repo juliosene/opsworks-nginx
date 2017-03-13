@@ -14,6 +14,14 @@ apt_package 'php-fpm' do
   action :install
   options '-yf'
 end
+apt_package 'php-mysql' do
+  action :install
+  options '-yf'
+end
+apt_package 'php-gd' do
+  action :install
+  options '-yf'
+end
 service 'php-fpm' do
   supports status: true, restart: true, reload: true
   action :nothing
