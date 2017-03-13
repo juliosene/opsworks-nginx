@@ -22,6 +22,13 @@ apt_package 'php-gd' do
   action :install
   options '-yf'
 end
+file "/etc/nginx/sites-available/default" do
+  owner 'root'
+  group 'root'
+  mode 0644
+  content ::File.open("/var/chef/cookbooks/nginx/files/default").read
+  action :create
+end
 service 'php-fpm' do
   supports status: true, restart: true, reload: true
   action :nothing
