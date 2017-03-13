@@ -1,11 +1,4 @@
-include_recipe 'deploy'
-opsworks_deploy_dir do
-    user deploy[:user]
-    group deploy[:group]
-    path deploy[:deploy_to]
-end
-
-opsworks_deploy do
-    deploy_data deploy
-    app application
+deploy 'wordpress' do
+  deploy_to '/var/www/html/'
+  action :deploy
 end
