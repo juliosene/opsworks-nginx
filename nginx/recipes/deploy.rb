@@ -7,7 +7,8 @@ search("aws_opsworks_app").each do |app|
   Chef::Log.info("********** The app's URL is '#{app['app_source']['url']}' **********")
 end
 deploy 'wordpress' do
-  path 'https://github.com/WordPress/WordPress.git'
+  repo 'https://github.com/WordPress/WordPress.git'
+  deploy_to '/var/www/html'
   user 'root'
   group 'root'
   action :deploy
