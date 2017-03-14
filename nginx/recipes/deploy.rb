@@ -19,4 +19,5 @@ file '/var/www/html/current/hc.html' do
   mode '0644'
   owner 'www-data'
   group 'www-data'
+  action :create
 end
