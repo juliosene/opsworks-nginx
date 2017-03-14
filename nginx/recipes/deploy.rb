@@ -9,6 +9,7 @@ end
 deploy 'wordpress' do
   repo 'https://github.com/WordPress/WordPress.git'
   deploy_to '/var/www/html'
+  symlink_before_migrate {}
   user 'root'
   group 'root'
   action :deploy
