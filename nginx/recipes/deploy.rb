@@ -8,7 +8,7 @@ search("aws_opsworks_app").each do |app|
 end
 deploy 'wordpress' do
   repo 'https://github.com/WordPress/WordPress.git'
-  current_path '/var/www/html'
+  deploy_to '/var/www/html'
   symlink_before_migrate Hash.new
   user 'root'
   group 'root'
