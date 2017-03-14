@@ -10,7 +10,13 @@ deploy 'wordpress' do
   repo 'https://github.com/WordPress/WordPress.git'
   deploy_to '/var/www/html'
   symlink_before_migrate Hash.new
-  user 'root'
-  group 'root'
+  user 'www-data'
+  group 'www-data'
   action :deploy
+end
+file '/var/www/html/current/hc.html' do
+  content '<html>This is a page for the health check.</html>'
+  mode '0644'
+  owner 'www-data'
+  group 'www-data'
 end
